@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE motores SYSTEM "pieza.dtd">
+<motores>
+  <piezas> 
+  <pieza>pieza1</pieza>
+  <pieza>pieza2</pieza>
+
+  </piezas>
+  
+  <tipomotor nombre="motor1">
+      <seccion>seccionej</seccion> 
+
+      <empleados familiar="si" responsable="nombre">ASDF</empleados> 
+  </tipomotor>
+</motores>

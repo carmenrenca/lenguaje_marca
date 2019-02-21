@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!--DOCTYPE biblioteca SYSTEM "EJERCICIO5.dtd"-->
+<biblioteca xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation='EJERCICIO5.xsd'>
+
+    <libro genero="novela">
+        <titulo>harry-potter</titulo>
+        <autor>
+        <nombre>jk</nombre>  
+
+        <apellido>rouwling</apellido>
+          </autor>
+        <editorial>salamandra</editorial>      
+        <anio>1999</anio>
+      
+    </libro>
+    
+       <libro genero="actas">
+        <titulo>buscandoanemo</titulo>
+        <autor>
+
+        <nombre>lala</nombre>  
+        <apellido>sss</apellido>
+          </autor>
+        <editorial>salamandra</editorial>      
+        <anio>2004</anio>
+      
+    </libro>
+</biblioteca>

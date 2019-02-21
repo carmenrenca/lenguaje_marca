@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mensaje SYSTEM "mensajedtd.dtd">
+<mensaje>
+  <email respuesta="no">
+  <cabecera>
+    <emisor>emisor1</emisor>  
+    <receptor>receptor01</receptor>
+    <receptor>receptor02</receptor>
+    <fecha>01/05/1/2005</fecha>
+  </cabecera>  
+  <asunto>mensaje de prueba</asunto>
+  <texto>texto1</texto>
+  <texto>
+<saludo>hola</saludo>  
+  </texto>
+  </email>
+
+</mensaje>

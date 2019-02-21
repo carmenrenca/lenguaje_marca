@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<fichas xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation='EJERCICIO6.xsd'>
+<ficha>
+    <nombre>ficha1</nombre>
+        <apellido1>rendon</apellido1>
+        <apellido2>carrabeo</apellido2>
+        <e-mail>carmenrenca@gmail.com</e-mail>
+     <direcciones categoria="empresa" zona="Centro">
+            <calle>malaga</calle>
+            <piso>piso1</piso>
+            <letra>L</letra>
+            <codigo_postal>4113</codigo_postal>
+            <ciudad>sevilla</ciudad>
+            <pais>españa</pais>
+                </direcciones>
+</ficha>
+
+<ficha>
+    <nombre>ficha2</nombre>
+        <apellido1>garcia</apellido1>
+        <apellido2>bizocho</apellido2>
+        <e-mail>narataliagarcia@gmail.com</e-mail>
+              <e-mail>virginiagarcia@gmail.com</e-mail>
+            
+     <direcciones categoria="particular" zona="Parque del Oeste">
+            <calle>cordoba</calle>
+            <piso>piso5</piso>
+            <letra>f</letra>
+            <codigo_postal>2145</codigo_postal>
+            <ciudad>Jaén</ciudad>
+            <pais>España</pais>
+                </direcciones>
+</ficha>
+
+</fichas>

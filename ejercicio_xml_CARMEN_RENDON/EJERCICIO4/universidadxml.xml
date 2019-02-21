@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<universidad xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation='EJERCICIO4.xsd'>
+
+
+<profesor>
+       <dni>12345678J</dni>
+        <nombre>carlos</nombre>
+        <apellido1>perez</apellido1>
+        <apellido2>ramirez</apellido2>
+        <fechanacimiento>1979-03-05</fechanacimiento>
+      <despacho>despacho1</despacho>
+      <horario>14:00:00</horario>
+      <asignaturas>
+        <asignatura codigo="ABC"></asignatura>
+      <asignatura  codigo="BJD"></asignatura>
+      </asignaturas>
+      
+      
+      </profesor>
+      
+      
+<profesor>
+       <dni>71973562J</dni>
+        <nombre>Sergio</nombre>
+        <apellido1>Hernandez</apellido1>
+        <apellido2>Carrabeo</apellido2>
+        <fechanacimiento>1996-11-02</fechanacimiento>
+      <despacho>despacho33</despacho>
+      <horario>18:30:00</horario>
+      <asignaturas>
+        <asignatura codigo="LER"></asignatura>
+      <asignatura  codigo="PUQ"></asignatura>
+      </asignaturas>
+      
+      
+      </profesor>
+    <alumno>
+        <dni>12345678P</dni>
+        <nombre>manuel</nombre>
+        <apellido1>garcia</apellido1>
+        <apellido2>rendon</apellido2>
+        <fechanacimiento>1978-03-12</fechanacimiento>
+         <asignaturas>
+        <asignatura codigo="LER" nota="SS"></asignatura>
+      <asignatura  codigo="PZD" nota="NP"></asignatura>
+      <asignatura  codigo="PUQ" nota="SB"></asignatura>
+      </asignaturas>
+    </alumno>
+    
+     <alumno>
+        <pasaporte country="españa">J00324</pasaporte>
+        <nombre>Laura</nombre>
+        <apellido1>Bejarano</apellido1>
+        <apellido2>Cobos</apellido2>
+        <fechanacimiento>1999-10-23</fechanacimiento>
+         <asignaturas>
+        <asignatura codigo="BJD" nota="SS"></asignatura>
+      <asignatura  codigo="LER" nota="NP"></asignatura>
+    
+      </asignaturas>
+    </alumno>
+    
+<materia codigo="LER" nCreditos="123" carrera="matematicas" curso="primero">mates</materia>
+<materia codigo="PZD" nCreditos="345" carrera="bioquimica" curso="cuarto">laboratorio</materia>
+<materia codigo="PUQ" nCreditos="763" carrera="economia" curso="segundo">derecho</materia>
+<materia codigo="ABC" nCreditos="703" carrera="medio_ambientales" curso="quinto">quimica</materia>
+<materia codigo="BJD" nCreditos="120" carrera="nutricion" curso="segundo">dieta</materia>
+</universidad>

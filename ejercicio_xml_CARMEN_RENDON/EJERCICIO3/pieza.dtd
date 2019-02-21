@@ -1,0 +1,9 @@
+<!ELEMENT motores (piezas,tipomotor)*>
+<!ELEMENT piezas (pieza)*>
+<!ELEMENT pieza (#PCDATA)>
+<!ELEMENT tipomotor (seccion,empleados)>
+<!ATTLIST tipomotor nombre CDATA #REQUIRED>
+<!ELEMENT empleados (#PCDATA)>
+<!ATTLIST empleados familiar (si|no) "no">
+<!ATTLIST empleados responsable CDATA #REQUIRED>
+<!ELEMENT seccion (#PCDATA)>

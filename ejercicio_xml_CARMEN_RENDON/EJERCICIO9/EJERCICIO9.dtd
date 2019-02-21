@@ -1,0 +1,16 @@
+<!ELEMENT pedidos (pedido+)>
+<!ELEMENT pedido (sucursal, articulo)+>
+<!ELEMENT sucursal (dir_envio, trabajador, fechapedido, revision)>
+<!ELEMENT dir_envio (#PCDATA)>
+<!ELEMENT  trabajador (#PCDATA)>
+<!ELEMENT fechapedido (#PCDATA)>
+<!ELEMENT revision (#PCDATA)>
+<!ELEMENT articulo (unidades, precio_unidad, observaciones)>
+<!ELEMENT unidades (#PCDATA)>
+<!ELEMENT precio_unidad (#PCDATA)>
+<!ELEMENT observacionesart (#PCDATA)>
+
+
+<!ATTLIST pedido codigo_pedido ID #REQUIRED>
+<!ATTLIST articulo codigo_articulo ID #REQUIRED>
+<!ATTLIST pedido observaciones (urgente|incompleto) #IMPLIED>

@@ -1,0 +1,10 @@
+<!ELEMENT biblioteca (libro+) >
+<!ELEMENT libro (titulo, autor+, editorial?, año?)>
+<!ELEMENT titulo (#PCDATA | subtitulo)*)>
+<!ELEMENT subtitulo (#PCDATA)*>
+<!ELEMENT autor (nombre?, apellido+) >
+<!ELEMENT nombre (#PCDATA)*>
+<!ELEMENT apellido (#PCDATA)*>
+<!ELEMENT editorial (#PCDATA)*>
+<!ELEMENT año (#PCDATA)*>
+<!ATTLIST libro tipo (actas, novela, ensayo) #REQUIRED>

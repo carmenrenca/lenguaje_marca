@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs='http://www.w3.org/2001/XMLSchema'>
+<xs:element name="biblioteca" type="tipobiblioteca"/>
+
+
+ <xs:complexType name="tipobiblioteca">
+        <xs:sequence>
+           <xs:element name="libro" minOccurs="1" maxOccurs ="unbounded" type="tipolibro">
+                 
+           </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      
+      <xs:complexType name="tipolibro">
+      <xs:sequence>
+      <xs:element name="titulo"  type="tipotitulo"/>
+     <xs:element name="autor"  type="tipoautor"/>
+     <xs:element name="editorial" minOccurs="0" maxOccurs="1" type="xs:string"/>
+     <xs:element name="anio" minOccurs="0" maxOccurs="1" type="xs:string"/>
+      </xs:sequence>
+        <xs:attribute name="genero" >
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+          <xs:enumeration value="actas"/>
+          <xs:enumeration value="novela"/>
+          <xs:enumeration value="ensayo"/>
+          </xs:restriction>
+      </xs:simpleType>
+     </xs:attribute>    
+       
+      </xs:complexType>
+
+<xs:complexType name="tipotitulo" mixed="true">
+    <xs:sequence>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="subtitulo" type="xs:string"/>     
+        </xs:choice>
+    </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tipoautor">
+<xs:sequence>
+<xs:element name="nombre" minOccurs="0" maxOccurs="1" type="xs:string"/>
+<xs:element name="apellido" minOccurs="1" maxOccurs="unbounded" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>      
+
+     
+</xs:schema>

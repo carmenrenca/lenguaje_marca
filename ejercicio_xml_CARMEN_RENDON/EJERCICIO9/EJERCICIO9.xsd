@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs='http://www.w3.org/2001/XMLSchema'>
+    <xs:element name="pedidos" type="tipopedidos"/>
+    <xs:complexType name="tipopedidos">
+          <xs:sequence>
+                    <xs:element name="pedido" minOccurs="1" maxOccurs="unbounded" type="tipopedido"/>
+            </xs:sequence>    
+    </xs:complexType>
+    
+    <xs:complexType name="tipopedido">
+        <xs:sequence>
+                <xs:element name="sucursal" minOccurs="1" maxOccurs="unbounded" type="tiposucursal"/>
+                <xs:element name="articulo" minOccurs="1" maxOccurs="unbounded" type="tipoarticulo"/>
+        </xs:sequence> 
+              <xs:attribute name="codigo_pedido" type="tipoCodigoPedido"/>
+        <xs:attribute name="observaciones" >
+          <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:enumeration value="urgente"/>
+                 <xs:enumeration value="incompleto"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>   
+    </xs:complexType>
+    
+    
+<xs:complexType name="tiposucursal">
+    <xs:sequence>
+
+        <xs:element name="dir_envio" minOccurs="0" maxOccurs="1" type="xs:string"/>
+        <xs:element name="trabajador" type="xs:string" />
+        <xs:element name="fechapedido" type="xs:date"/>
+        <xs:element name="revision" type="xs:duration"/>
+        
+    </xs:sequence>
+
+</xs:complexType>
+
+
+
+ <xs:complexType name="tipoarticulo">
+  <xs:sequence>
+
+          <xs:element name="unidades" type="xs:integer"/>
+          <xs:element name="precio_unidad" type="precio"/>
+          <xs:element name="observacionesart" type="xs:string"/>
+          
+   </xs:sequence> 
+  <xs:attribute name="codigo_articulo" type="tipocodigoart"/>
+ </xs:complexType>
+ 
+ <xs:simpleType name="tipocodigoart">
+  <xs:restriction base="xs:string">
+       <xs:pattern value="[A-Z]{3}-[0-9]{3}"/>
+  </xs:restriction> 
+ </xs:simpleType>
+ 
+  <xs:simpleType name="precio">
+  <xs:restriction base="xs:decimal">
+           <xs:minInclusive value="0"/>
+  </xs:restriction> 
+ </xs:simpleType>
+ 
+ <xs:simpleType name="tipoCodigoPedido">
+  <xs:restriction base="xs:string">
+       <xs:pattern value="[A-Z]{1}[A-Z0-9]{7}"/>
+  </xs:restriction> 
+ </xs:simpleType>
+</xs:schema>

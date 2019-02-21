@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs='http://www.w3.org/2001/XMLSchema'>
+<xs:element name="prestamos" type="tipoprestamos"/>
+
+<xs:complexType name="tipoprestamos">
+<xs:sequence>
+      <xs:element name="prestamo" minOccurs="1" maxOccurs="unbounded" type="tipoprestamo"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tipoprestamo">
+    <xs:sequence>
+    <xs:element name="bibliotecario" type="datos"></xs:element>
+          <xs:element name="fechaprestamo" type="xs:date"/>
+          <xs:element name="fechadevolucion" type="xs:date"/>
+          <xs:element name="lector" type="tipolector"/>
+          <xs:element name="ejemplares" minOccurs="0" maxOccurs="3" type="tipoejemplar"/>
+    </xs:sequence>
+  <xs:attribute name="codigo"  type="xs:ID" use="required"/>
+</xs:complexType>
+
+
+<xs:complexType name="datos">
+    <xs:sequence>
+     <xs:element name="nombre" type="xs:string"/>
+          <xs:element name="apellido1" type="xs:string"/>
+          <xs:element name="apellido2" type="xs:string"/>
+          
+    </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tipoejemplar">
+<xs:sequence>
+    <xs:element name="numero_registro" type="xs:string"/>
+    <xs:element name="titulo" type="xs:string"/>
+    <xs:element name="autor" minOccurs="0" maxOccurs="unbounded" type="xs:string"/>
+    
+
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tipolector">
+    <xs:sequence>
+    <xs:element name="id" type="xs:IDREF"/>
+     <xs:element name="nombre" type="xs:string"/>
+          <xs:element name="apellido1" type="xs:string"/>
+          <xs:element name="apellido2" type="xs:string"/>
+          <xs:element name="telefono" type="tipotelefono"/>
+          <xs:element name="direccion" type="tipodirecion"/>
+    </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tipodirecion">
+    <xs:sequence>
+    <xs:element name="nombre_Calle" type="xs:string"/>
+    <xs:element name="numero" type="xs:integer"/>
+    <xs:element name="piso" type="xs:string"/>
+    <xs:element name="letra" type="tipoletra"/>
+    <xs:element name="codigo_postal" type="tipocodigo"/>
+    <xs:element name="localidad" type="xs:string"/>
+    <xs:element name="provincia" type="xs:string"/>
+        
+    </xs:sequence>
+
+<xs:attribute name="tipocalle">
+      <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:enumeration value="calle"/>
+                 <xs:enumeration value="avenida"/>
+              </xs:restriction>
+            </xs:simpleType>
+    </xs:attribute>
+</xs:complexType>
+
+<xs:simpleType name="tipocodigo">
+            <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9][0-9][0-9][0-9]"/>
+        </xs:restriction>
+</xs:simpleType>
+
+
+<xs:simpleType name="tipoletra">
+            <xs:restriction base="xs:string">
+            <xs:pattern value="([A-Za-z])*"/>
+        </xs:restriction>
+</xs:simpleType>
+
+
+<xs:simpleType name="tipotelefono">
+            <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]"/>
+        </xs:restriction>
+</xs:simpleType>
+
+</xs:schema>

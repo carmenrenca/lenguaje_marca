@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs='http://www.w3.org/2001/XMLSchema'>
+<xs:element name="fichas" type="ficha"/>
+
+<xs:complexType name="ficha">
+      <xs:sequence>
+        <xs:element name="ficha" minOccurs="0" maxOccurs="unbounded" type="tipoficha"/>
+      </xs:sequence>
+    </xs:complexType>  
+    <xs:complexType name="tipoficha">
+    <xs:sequence>
+        <xs:element name="nombre" type="xs:string"/>
+        <xs:element name="apellido1" type="xs:string"/>
+        <xs:element name="apellido2"  type="xs:string"/>
+        <xs:element name="e-mail" minOccurs="0" maxOccurs="2" type="tipoemail"/>
+        <xs:element name="direcciones" minOccurs="0" maxOccurs="3" type="tipodireccion"/>
+    </xs:sequence>  
+  </xs:complexType>
+  
+  <xs:complexType name="tipodireccion">
+    <xs:sequence>
+        <xs:element name="calle" type="xs:string"/>
+           <xs:element name="piso" minOccurs="0" maxOccurs="1" type="xs:string"/>
+           <xs:element name="letra" minOccurs="0" maxOccurs="1" type="tipoletra"/> 
+           <xs:element name="codigo_postal" minOccurs="0" maxOccurs="1" type="tipocodigo"/>
+            <xs:element name="ciudad" type="xs:string"/>
+            <xs:element name="pais" type="xs:string"/>
+    </xs:sequence>  
+<xs:attribute name="categoria" use="required">
+          <xs:simpleType>
+          <xs:restriction base="xs:string">
+             <xs:enumeration value="empresa"/>
+                <xs:enumeration value="particular"/>
+                <xs:enumeration value="agente_comercial"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+     
+     
+     <xs:attribute name="zona" >
+        <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:enumeration value="Malagueta"/>
+                <xs:enumeration value="Centro"/>
+                <xs:enumeration value="Parque del Oeste"/>
+                <xs:enumeration value="Ciudad Jardín"/>
+              </xs:restriction>
+            </xs:simpleType>    
+          </xs:attribute>
+     
+  </xs:complexType>
+  
+
+<xs:simpleType name="tipoletra">
+            <xs:restriction base="xs:string">
+            <xs:pattern value="[A-Za-z]*"/>
+        </xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tipoemail">
+            <xs:restriction base="xs:string">
+            <xs:pattern value="([A-Za-z0-9])+@([A-Za-z0-9])+.com"/>
+        </xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="tipocodigo">
+            <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9][0-9][0-9][0-9]"/>
+        </xs:restriction>
+</xs:simpleType>
+</xs:schema>

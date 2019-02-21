@@ -1,0 +1,108 @@
+﻿<?xml version="1.0"?>
+<xs:schema xmlns:xs='http://www.w3.org/2001/XMLSchema'>
+
+
+<xs:element name="universidad" type="tipouniversidad"/>
+
+     
+      <xs:complexType name="tipouniversidad">
+        <xs:sequence>
+           <xs:element name="profesor" minOccurs="1" maxOccurs="unbounded" type="tipoprofesor"  />
+            <xs:element name="alumno" minOccurs="1" maxOccurs="unbounded" type="tipoalumno"/>
+              <xs:element name="materia" minOccurs="1" maxOccurs="unbounded" type="tipomaterias"/>
+        </xs:sequence>
+      </xs:complexType>
+
+
+
+<xs:complexType name="tipoprofesor">
+<xs:sequence>
+<xs:group  ref="tipodatos"/>
+<xs:element name="despacho" type="xs:string"/>
+<xs:element name="horario" type="xs:time"/>
+<xs:element name="asignaturas" type="newasignatura"/>
+</xs:sequence>
+</xs:complexType>
+
+
+
+<xs:complexType name="tipoalumno">
+      <xs:sequence>
+      <xs:group ref="tipodatos"/>
+          <xs:element name="asignaturas" type="newasignatura"/>  
+      </xs:sequence>
+
+</xs:complexType>
+
+
+<xs:group name="tipodatos">
+<xs:sequence>
+<xs:choice>
+<xs:element name="dni" type="midni"/>
+<xs:element name="pasaporte" type="tipopasaporte"/>
+</xs:choice>
+<xs:element name="nombre" type="xs:string"/>
+<xs:element name="apellido1" type="xs:string"/>
+<xs:element name="apellido2" type="xs:string"/>
+<xs:element name="fechanacimiento" type="xs:date"/>
+  <xs:choice minOccurs="0" maxOccurs="unbounded">
+       <xs:element name="direcion_postal" type="xs:string" />
+        <xs:element name="telefono" type="xs:integer"/>
+        <xs:element name="cuentacorreo" type="xs:integer"/>    
+    </xs:choice>
+</xs:sequence>
+</xs:group>
+
+
+      <xs:simpleType name="midni">
+            <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]{8}[A-Z]{1}"/>
+        </xs:restriction>
+</xs:simpleType>
+
+      <xs:complexType name="tipopasaporte">
+        <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="country" type="xs:string" />
+      </xs:extension>
+    </xs:simpleContent>
+      </xs:complexType>
+
+<xs:complexType name="newasignatura">
+  <xs:sequence>
+      <xs:element name="asignatura" minOccurs="1" maxOccurs="unbounded" type="listaasignatura"/>  
+  </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="listaasignatura">
+   <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute name="codigo" type="xs:IDREF"/>
+          <xs:attribute name="nota">
+          <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:enumeration value="NP"/>
+                <xs:enumeration value="SS"/>
+                <xs:enumeration value="AP"/>
+                <xs:enumeration value="NT"/>
+                <xs:enumeration value="SB"/>
+                <xs:enumeration value="MH"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+       </xs:extension>
+      </xs:simpleContent>
+</xs:complexType>
+
+  <xs:complexType name="tipomaterias">
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute name="codigo" type="xs:ID"/>
+          <xs:attribute name="nCreditos" type="xs:integer"/>
+          <xs:attribute name="carrera" type="xs:string"/>
+          <xs:attribute name="curso" type="xs:string"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+
+</xs:schema>

@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!--DOCTYPE pedidos SYSTEM "EJERCICIO9.dtd"-->
+<pedidos xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="EJERCICIO9.xsd">
+<pedido codigo_pedido="A12AS236" observaciones="urgente">
+      <sucursal>
+          <dir_envio>calle sevilla</dir_envio>
+          <trabajador>Miguel Hernandez Blanco</trabajador>
+          <fechapedido>2019-01-21</fechapedido>
+          <revision>P43D</revision>
+    </sucursal>
+    <articulo codigo_articulo="LGC-522">
+
+        <unidades>12</unidades>
+        <precio_unidad>5.00</precio_unidad>
+        <observacionesart></observacionesart>
+        
+    </articulo>
+</pedido>
+
+<pedido codigo_pedido="B1246J0L" observaciones="urgente">
+      <sucursal>
+          <dir_envio>Calle Madrid</dir_envio>
+          <trabajador>Laura Garcia Luquez</trabajador>
+          <fechapedido>2019-02-21</fechapedido>
+          <revision>P29D</revision>
+    </sucursal>
+    <articulo codigo_articulo="PNC-193">
+
+        <unidades>7</unidades>
+        <precio_unidad>10.00</precio_unidad>
+        <observacionesart></observacionesart>
+        
+    </articulo>
+</pedido>
+</pedidos>

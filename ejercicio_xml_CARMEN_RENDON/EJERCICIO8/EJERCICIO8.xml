@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<prestamos xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation='EJERCICIO8.xsd' >
+
+<prestamo codigo="GJD" >
+
+<bibliotecario>
+<nombre>Sergio</nombre>
+<apellido1>Hernandez</apellido1>
+<apellido2>Rodrigez</apellido2>
+</bibliotecario>
+
+<fechaprestamo>2000-12-03</fechaprestamo>
+<fechadevolucion>2000-12-15</fechadevolucion>
+<lector>
+          <id>GJD</id>
+          <nombre>carmen</nombre>
+          <apellido1>Rendon</apellido1>
+          <apellido2>Carrabeo</apellido2>
+          <telefono>123456789</telefono>
+          <direccion tipocalle="calle">
+                 
+                  <nombre_Calle>comercio</nombre_Calle>
+
+                  <numero>23</numero>
+                  <piso>piso1</piso>
+                  <letra>A</letra>
+                  <codigo_postal>4125</codigo_postal>
+                  <localidad>sevilla</localidad>
+                  <provincia>Mairena del aljarafe</provincia>
+          </direccion>
+        
+</lector>
+ 
+          <ejemplares>
+              <numero_registro>123</numero_registro>    
+              <titulo>el principito</titulo>      
+              <autor>anonimo</autor>
+          </ejemplares>
+</prestamo>
+
+<prestamo codigo="DLP">
+
+<bibliotecario>
+<nombre>Laura</nombre>
+
+<apellido1>Ramirez</apellido1>
+<apellido2>Blanco</apellido2>
+</bibliotecario>
+
+<fechaprestamo>2019-07-25</fechaprestamo>
+<fechadevolucion>2019-08-06</fechadevolucion>
+<lector>
+          <id>DLP</id>
+          <nombre>Sara</nombre>
+          <apellido1>Herrera</apellido1>
+          <apellido2>Carrabeo</apellido2>
+          <telefono>856381734</telefono>
+          <direccion tipocalle="avenida">
+                  <nombre_Calle>avenida de la paz</nombre_Calle>
+                  <numero>02</numero>
+                  <piso>piso2</piso>
+                  <letra>B</letra>
+                  <codigo_postal>4562</codigo_postal>
+                  <localidad>Cadiz</localidad>
+                  <provincia>San Lucar de Barrameda</provincia>
+          </direccion>
+        
+</lector>
+ 
+          <ejemplares>
+              <numero_registro>572</numero_registro>    
+              <titulo>Historia de españa</titulo>      
+              <autor>anonimo</autor>
+          </ejemplares>
+
+</prestamo>
+
+</prestamos>
